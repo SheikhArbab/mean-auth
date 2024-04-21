@@ -1,0 +1,5 @@
+<h1 *ngIf="message; else elseBlock">{{message}}</h1>
+
+<ng-template #elseBlock>
+    <h1>You are not logged in yet !</h1>
+</ng-template>

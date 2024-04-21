@@ -1,0 +1,33 @@
+<div class="container mx-auto">
+    <form class="mb-3 row" [formGroup]="form" (ngSubmit)="submit()">
+ 
+        <!-- Email Address -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Email Address</label>
+            <input formControlName="email" type="email" class="form-control" id="exampleFormControlInput2"
+                placeholder="name@example.com">
+            <!-- Error message for Email Address -->
+            <p *ngIf="form.get('email')?.touched && form.get('email')?.invalid" style="color: red;">
+                {{ form.get('email')?.hasError('required') ? 'Email is required' : 'Invalid email address' }}
+            </p>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="exampleFormControlInput3"
+                placeholder="Enter your password">
+            <!-- Error message for Password -->
+            <p *ngIf="form.get('password')?.touched && form.get('password')?.invalid" style="color: red;">
+                Password is required.
+            </p>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mb-3">
+            <button class="btn btn-primary mx-auto w-100" type="submit">
+                Login
+            </button>
+        </div>
+    </form>
+</div>
